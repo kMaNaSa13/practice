@@ -66,69 +66,6 @@ SQL> insert into emp values(123,'abc','manager',345,'16-aug-04',2000,500,30,25,0
 
 1 row created.
 
-SQL> select *from emp;
-
-     EMPNO ENAME      JOB               MGR HIREDATE         SAL       COMM
----------- ---------- ---------- ---------- --------- ---------- ----------
-    DEPTNO        AGE       ESAL
----------- ---------- ----------
-      7369 smith      clerk            7902 17-DEC-80        800          0
-        20         25          0
-
-      7499 allen      salesman         7698 20-FEB-81       1600        300
-        30         25          0
-
-      7521 ward       salesman         7698 22-FEB-81       1250        500
-        30         25          0
-
-
-     EMPNO ENAME      JOB               MGR HIREDATE         SAL       COMM
----------- ---------- ---------- ---------- --------- ---------- ----------
-    DEPTNO        AGE       ESAL
----------- ---------- ----------
-      7566 jones      manager          7839 02-APR-81       2975        500
-        20         25          0
-
-      7698 blake      manager          7839 01-MAY-81       2850       1400
-        30         25          0
-
-       123 abc        manager           345 16-AUG-04       2000        500
-        30         25          0
-
-
-6 rows selected.
-
-SQL> rollback;
-
-Rollback complete.
-
-SQL> select *from emp;
-
-     EMPNO ENAME      JOB               MGR HIREDATE         SAL       COMM
----------- ---------- ---------- ---------- --------- ---------- ----------
-    DEPTNO        AGE       ESAL
----------- ---------- ----------
-      7369 smith      clerk            7902 17-DEC-80        800          0
-        20         25          0
-
-      7499 allen      salesman         7698 20-FEB-81       1600        300
-        30         25          0
-
-      7521 ward       salesman         7698 22-FEB-81       1250        500
-        30         25          0
-
-
-     EMPNO ENAME      JOB               MGR HIREDATE         SAL       COMM
----------- ---------- ---------- ---------- --------- ---------- ----------
-    DEPTNO        AGE       ESAL
----------- ---------- ----------
-      7566 jones      manager          7839 02-APR-81       2975        500
-        20         25          0
-
-      7698 blake      manager          7839 01-MAY-81       2850       1400
-        30         25          0
-
-
 SQL>
 
 
