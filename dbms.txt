@@ -1,0 +1,143 @@
+SQL> conn system/admin
+Connected.
+SQL> drop table employee;
+
+Table dropped.
+
+SQL> create table employee (empno number(4),ename varchar(10),job varchar(10),mgr number(7),hiredate date,sal number(10),comm number(10),deptno number(5),age number(5),esal number(2));
+
+Table created.
+
+SQL> insert into employee values(7369,'smith','clerk',7902,'17-dec-80',800,0,20,25,0);
+
+1 row created.
+
+SQL> insert into employee values(7499,'allen','salesman',7698,'20-feb-81',1600,300,30,25,0);
+
+1 row created.
+
+SQL> insert into employee values(7521,'ward','salesman'7698,'22-feb-81'1250,500,30,25,0);
+insert into employee values(7521,'ward','salesman'7698,'22-feb-81'1250,500,30,25,0)
+                                                  *
+ERROR at line 1:
+ORA-00917: missing comma
+
+
+SQL> insert into employee values(7521,'ward','salesman',7698,'22-feb-81',1250,500,30,25,0);
+
+1 row created.
+
+SQL> insert into employee values(7566,'jones','manager',7839,'02-apr-81',2975,500,20,25,0);
+
+1 row created.
+
+SQL> insert into employee values(7698,'blake','manager',7839,'01-may-81',2850,1400,30,25,0);
+
+1 row created.
+
+SQL> alter table employee add constraint p1 primary key(empno);
+
+Table altered.
+
+SQL> rename employee to emp;
+
+Table renamed.
+
+SQL> insert into employee values(123,'abc','manager',345,'16-aug-04',2000,500,30,25,0);
+insert into employee values(123,'abc','manager',345,'16-aug-04',2000,500,30,25,0)
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> insert into emp values(123,'abc','manager',345,'16-aug-04',2000,500,30,25,0);
+
+1 row created.
+
+SQL> delete from emp where empno=123;
+
+1 row deleted.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> insert into emp values(123,'abc','manager',345,'16-aug-04',2000,500,30,25,0);
+
+1 row created.
+
+SQL> select *from emp;
+
+     EMPNO ENAME      JOB               MGR HIREDATE         SAL       COMM
+---------- ---------- ---------- ---------- --------- ---------- ----------
+    DEPTNO        AGE       ESAL
+---------- ---------- ----------
+      7369 smith      clerk            7902 17-DEC-80        800          0
+        20         25          0
+
+      7499 allen      salesman         7698 20-FEB-81       1600        300
+        30         25          0
+
+      7521 ward       salesman         7698 22-FEB-81       1250        500
+        30         25          0
+
+
+     EMPNO ENAME      JOB               MGR HIREDATE         SAL       COMM
+---------- ---------- ---------- ---------- --------- ---------- ----------
+    DEPTNO        AGE       ESAL
+---------- ---------- ----------
+      7566 jones      manager          7839 02-APR-81       2975        500
+        20         25          0
+
+      7698 blake      manager          7839 01-MAY-81       2850       1400
+        30         25          0
+
+       123 abc        manager           345 16-AUG-04       2000        500
+        30         25          0
+
+
+6 rows selected.
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select *from emp;
+
+     EMPNO ENAME      JOB               MGR HIREDATE         SAL       COMM
+---------- ---------- ---------- ---------- --------- ---------- ----------
+    DEPTNO        AGE       ESAL
+---------- ---------- ----------
+      7369 smith      clerk            7902 17-DEC-80        800          0
+        20         25          0
+
+      7499 allen      salesman         7698 20-FEB-81       1600        300
+        30         25          0
+
+      7521 ward       salesman         7698 22-FEB-81       1250        500
+        30         25          0
+
+
+     EMPNO ENAME      JOB               MGR HIREDATE         SAL       COMM
+---------- ---------- ---------- ---------- --------- ---------- ----------
+    DEPTNO        AGE       ESAL
+---------- ---------- ----------
+      7566 jones      manager          7839 02-APR-81       2975        500
+        20         25          0
+
+      7698 blake      manager          7839 01-MAY-81       2850       1400
+        30         25          0
+
+
+SQL>
+
+
+
+
+
+
+
+
+
+
+
